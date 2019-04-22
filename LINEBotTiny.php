@@ -60,7 +60,6 @@ class LINEBotTiny {
         $this->channelSecret = $channelSecret;
     }
 
-
     public function parseEvents() {
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -227,9 +226,9 @@ class LINEBotTiny {
         }
     }
 
-	/*
-   // public function getProfile_($userId  = null) {
-    public function getProfile($userId = null) {
+
+    public function getProfile($userId) {
+    //public function getProfile($userId = null) {
         $header = array(
             'Authorization: Bearer ' . $this->channelAccessToken,
         );
@@ -248,19 +247,8 @@ class LINEBotTiny {
         }
         return json_decode($response);
     }
-	*/
 
 
-	
-    public function profile($userId)
-    {
-		return json_decode(exec_get('https://api.line.me/v2/bot/profile/'.$userId,$this->channelAccessToken));
-    }
-
-    public function gprofile($gid,$uid)
-    {
-		return json_decode(exec_get('https://api.line.me/v2/bot/group/'.$gid.'/member/'.$uid,$this->channelAccessToken));
-    }
 
     private function sign($body) {
         $hash = hash_hmac('sha256', $body, $this->channelSecret, true);
@@ -269,78 +257,3 @@ class LINEBotTiny {
     }
 
 }
-
-
-
-
-
-
-
-function exec_get($fullurl,$channelAccessToken)
-{
-		$header = array(
-            "Content-Type: application/json;charset=UTF-8",
-            'Authorization: Bearer '.$channelAccessToken,
-        );
-
-		
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);		
-		curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		curl_setopt($ch, CURLOPT_URL, $fullurl);
-		
-		$returned =  curl_exec($ch);
-		curl_close($ch);
-		return($returned);
-}
-
-
-
-function exec_url($fullurl,$channelAccessToken,$message)
-{
-		
-		$header = array(
-            "Content-Type: application/json;charset=UTF-8",
-            'Authorization: Bearer '.$channelAccessToken,
-        );
-
-		
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt($ch, CURLOPT_POST,           1 );
-		curl_setopt($ch, CURLOPT_POSTFIELDS,     $message); 
-		curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		curl_setopt($ch, CURLOPT_URL, $fullurl);
-		
-		$returned =  curl_exec($ch);
-		curl_close($ch);
-		return($returned);
-}
-
-
-
-function exec_url_aja($fullurl)
-	{
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_VERBOSE, 1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-			curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-			curl_setopt($ch, CURLOPT_URL, $fullurl);
-			
-			$returned =  curl_exec($ch);
-			curl_close($ch);		
-			return($returned);
-	}
