@@ -222,7 +222,7 @@ if (!is_null($events['events'])) {
 				$txt = $t[$random_keys];
 					$messages = [
 								'type' => 'text',
-								'text' => $txt.$today_        
+								'text' => $txt.$today_.$detail        
 					];
 			}			
 			
