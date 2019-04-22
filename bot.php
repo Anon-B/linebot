@@ -148,7 +148,7 @@ if (!is_null($events['events'])) {
 
 			
 			else if (preg_match('(เตือน|ตาราง)', $text) === 1 && preg_match('(นัด)', $text) === 1) {
-				$detail = '';
+				$detail = 'ทดสอบ';
 				$memo_=array(
 
 					"23-04-2019"=>"มีนัด (23 เม.ย. 62) ",
