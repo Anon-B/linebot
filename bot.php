@@ -1,5 +1,5 @@
 <?php
-OK
+
 header('Content-Type: text/html; charset=utf-8');
 
 ini_set("log_errors", 1);
@@ -368,7 +368,7 @@ function replyMsg($event, $client)
 					);
 			$client->replyMessage1($event['replyToken'],$a);
 		}
-		
+
 		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า)', $msg) === 1) {
 
 			$t = 'การบ่นไม่ใช่การแก้ปัญหา และ การด่าก็ไม่ใช่วิธีการแก้ไข'; 	
@@ -381,7 +381,6 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-
 
 
     }
