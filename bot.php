@@ -163,7 +163,7 @@ if (!is_null($events['events'])) {
 				$s3d = date("d-m-Y",strtotime("+3 days",strtotime($today_)));
 				$s2d = date("d-m-Y",strtotime("+2 days",strtotime($today_)));
 				$s1d = date("d-m-Y",strtotime("+1 days",strtotime($today_)));
-			/*
+			
 
 				if(array_key_exists($s7d, $memo_))  // holiday;
 				//else if(in_array($today, $holiday))  // holiday;
@@ -189,8 +189,7 @@ if (!is_null($events['events'])) {
 				if(array_key_exists($today_, $memo_))
 				{
 					$detail .= "อย่าลืมวันนี้นะ : ".$memo_[$today_]." ";
-				}	
-*/				
+				}				
 				
 				//$uid1 = 'U93c1d95e7b6d72d2dd3644bbbd35281a';//yl
 				//$uid2 = 'Uf8e0fa9ddb37ad7d92989e1b80d855d5'; //nt
