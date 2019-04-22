@@ -1,13 +1,13 @@
 <?php
 
 // for test debug file
-require_once('LINEBotTiny_multi.php');
+require_once('LINEBotTiny.php');
 
 //ใส่Token ที่ได้จาก Line Messaging API https://developers.line.me
-$channelAccessToken = 'Jny2rfcTlP82tJvnS0RxjC460o2oR6lb0zlcNUrIQSZxYz4XXkrL3j3dktcU+CUBOXicWFDDL0xMsPRFB7Oe8sdFSEqNLhROuPX+D+MrBs0LwDoYFql7A31fxRA3jIjwt4SRI9Rs+EIl9scNY07H6wdB04t89/1O/w1cDnyilFU=';
+$channelAccessToken = 'Z+82Dj/iMhmE3mjr2EKu+0+W5a4O0ZiLT8SiohLjwTwSINQ+Kd/v+FdHPH9vSHriwk3IkO7Kio8GWTum007bD3r8/1BCtayNWvf+cDL8FznI3YyKcJ0OazxuBuzrlvXkpn8mYfi5MwddhMfPi3JvvgdB04t89/1O/w1cDnyilFU=';
 
 //ใส Channel secret ที่ได้จาก Line Messaging API https://developers.line.me
-$channelSecret = 'f62e4879fba4a660307e3e91fd5c3f0d';
+$channelSecret = '7f9d9cf64df0b478ed1d2c5775a60c45';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 $botName = "BOT";
