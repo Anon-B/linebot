@@ -347,14 +347,6 @@ $t = var_export( $client->parseEvents() , true);
 file_put_contents("test.txt", $t );
 
 
-foreach ($events['events'] as $event) {
-	// Reply only when message sent is in 'text' format
-	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-		// Get text sent
-		$text = $event['message']['text'];
-		$uid = $event['source']['userId'];
-		$gid = $event['source']['groupId'];
-		$timestamp = $event['timestamp'];
 
 function replyMsg($event, $client)
 {
@@ -389,7 +381,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-		
+
 
 
     }
