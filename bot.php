@@ -44,6 +44,7 @@ if (!is_null($events['events'])) {
 				foreach ($a1 as $val) {
 					$chk = explode($val,$text);	
 						if (chk[0]==""){
+							/*
 							$gid = $event['source']['groupId'];
 							$uid = $event['source']['userId'];
 							//$url = 'https://api.line.me/v2/bot/group/'.$gid.'/member/'.$uid; //กลุ่ม
@@ -76,8 +77,8 @@ if (!is_null($events['events'])) {
 									"type" => "text",
 									"text" =>  "ดีครับ \n".$obj->displayName
 							];	 
-								
-							break;
+							*/	
+							//break;
 						}
 						else{
 								
