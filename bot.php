@@ -307,7 +307,40 @@ function replyMsg($event, $client)
 				];
 			}
 
-
+		else {
+				
+				$ta=array("1","2","3","4","5");
+				$random=array_rand($ta,1);
+				$r = $ta[$random];
+				
+				if($r == "3"){
+					$t=array("ครับ","คะ");
+					$random_keys=array_rand($t,1);
+					$txt = $t[$random_keys];
+					$messages = [
+								'type' => 'text',
+								'text' => $txt          
+					];
+				}
+				else if($r == "2"){
+					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
+					$random_keys=array_rand($sticker,1);
+					$txt = $sticker[$random_keys];
+					$split = explode(",", $txt);
+					$p = $split[0];
+					$s = $split[1];
+					//echo $split[0];
+					$messages = [
+								'type' => 'sticker',
+								'packageId' => $p,
+								'stickerId' => $s
+					];
+				}
+				
+				
+				else{
+				}
+			}
     }
 
     elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
