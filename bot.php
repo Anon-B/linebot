@@ -28,8 +28,7 @@ function get_url($urllink)
 }
 //---------------------------------//
 
-echo "OK";
-/*
+
 
 //ส่งแบบข้อความเดียว---push message------------------//
 // Example : https://gisbott.herokuapp.com/bot.php?send=answer&text=test
@@ -158,7 +157,8 @@ function replyMsg($event, $client)
     }
 	//----------------------------จบเงื่อนไขข้อความtext-----------------------------------//
 
-
+echo "OK";
+/*
 
 	//-----ถ้ามีการส่งสติ๊กเกอร์------------------------------------------------------------//
     elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
@@ -204,7 +204,7 @@ function replyMsg($event, $client)
 //----------------------------จบฟังก์ชั่น ReplyMessage----------------------------------//
 
 
-
+*/
 
 //------listen--$client->parseEvents()----และเข้าฟังก์ชั่น replyMsg--------//
 foreach ($client->parseEvents() as $event) {
@@ -236,6 +236,6 @@ foreach ($client->parseEvents() as $event) {
 };
 //----------------------------------------------------------//
 
-*/
+
 
 ?>
