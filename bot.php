@@ -368,6 +368,19 @@ function replyMsg($event, $client)
 					);
 			$client->replyMessage1($event['replyToken'],$a);
 		}
+		
+		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า)', $msg) === 1) {
+
+			$t = 'การบ่นไม่ใช่การแก้ปัญหา และ การด่าก็ไม่ใช่วิธีการแก้ไข'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
 		if(preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $text) === 1) {
 				
 				$a1=array("สวัสดี","หวัดดี","ดีค่ะ","ดีคับ","ดีครับ","ดีคร่า","ดีค่า");
@@ -417,18 +430,6 @@ function replyMsg($event, $client)
 				
 					
 			}
-		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า)', $msg) === 1) {
-
-			$t = 'การบ่นไม่ใช่การแก้ปัญหา และ การด่าก็ไม่ใช่วิธีการแก้ไข'; 	
-        	$a = array(
-		                array(
-							'type' => 'text',
-							'text' => $t . ''				
-						)
-					);
-			$client->replyMessage1($event['replyToken'],$a);
-
-		}
 
 
     }
