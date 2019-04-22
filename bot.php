@@ -200,7 +200,7 @@ if (!is_null($events['events'])) {
 				else{	
 				}
 				
-				$url_line = 'https://xxxxxxxxxxxxxxxxxxxxxxxx/bot.php?send=push&id='.$id_t .'&text='.urlencode($detail);
+				$url_line = 'https://linebotnon.herokuapp.com/bot.php?send=push&id='.$id_t .'&text='.urlencode($detail);
 				//echo $url_line;
 				$chOne = curl_init(); 
 					curl_setopt( $chOne, CURLOPT_URL, $url_line); 
@@ -222,7 +222,7 @@ if (!is_null($events['events'])) {
 				$txt = $t[$random_keys];
 					$messages = [
 								'type' => 'text',
-								'text' => $txt.$today_.$detail        
+								'text' => $txt       
 					];
 			}			
 			
