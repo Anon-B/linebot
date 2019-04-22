@@ -316,17 +316,17 @@ function replyMsg($event, $client)
 				if($r == "3"){
 					$t=array("ครับ","คะ");
 					$random_keys=array_rand($t,1);
-					$txt = $t[$random_keys];
+					$t = $t[$random_keys];
 					$messages = [
 								'type' => 'text',
-								'text' => $txt          
+								'text' => $t          
 					];
 				}
 				else if($r == "2"){
 					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
 					$random_keys=array_rand($sticker,1);
-					$txt = $sticker[$random_keys];
-					$split = explode(",", $txt);
+					$t = $sticker[$random_keys];
+					$split = explode(",", $t);
 					$p = $split[0];
 					$s = $split[1];
 					//echo $split[0];
