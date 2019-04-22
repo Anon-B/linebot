@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 			$uid = $event['source']['userId'];
 			$gid = $event['source']['groupId'];
 			$timestamp = $event['timestamp'];
-			if(preg_match(substr( $string_n, 0, 4 ) === '(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $text) === 1) {	
+			if(preg_match(substr('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $text) === 1) {	
 					$gid = $event['source']['groupId'];
 					$uid = $event['source']['userId'];
 					//$url = 'https://api.line.me/v2/bot/group/'.$gid.'/member/'.$uid; //กลุ่ม
