@@ -40,12 +40,10 @@ if (!is_null($events['events'])) {
 			
 			if(preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $text) === 1) 
 				
-				$a1=["สวัสดี","หวัดดี","ดีค่ะ","ดีคับ","ดีครับ","ดีคร่า","ดีค่า"];
-				$a1len=count($a1);
-
-				for ($x = 0; $x < $a1len; $x++) {
-					$chk = explode($a1[$x],$text);	
-						if (chk[0]=""){
+				$a1=array("สวัสดี","หวัดดี","ดีค่ะ","ดีคับ","ดีครับ","ดีคร่า","ดีค่า");
+				foreach ($a1 as $val) {
+					$chk = explode($val,$text);	
+						if (chk[0]==""){
 							$gid = $event['source']['groupId'];
 							$uid = $event['source']['userId'];
 							//$url = 'https://api.line.me/v2/bot/group/'.$gid.'/member/'.$uid; //กลุ่ม
@@ -78,7 +76,6 @@ if (!is_null($events['events'])) {
 									"type" => "text",
 									"text" =>  "ดีครับ \n".$obj->displayName
 							];	 
-								
 								
 							break;
 						}
