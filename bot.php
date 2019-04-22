@@ -152,6 +152,7 @@ if (!is_null($events['events'])) {
 				$memo_=array(
 
 					"23-04-2019"=>"มีนัด (23 เม.ย. 62) ",
+					"25-04-2019"=>"มีนัด (27เม.ย. 62) ",
 					"27-04-2019"=>"มีนัด (27เม.ย. 62) ",
 					"29-04-2019"=>"มีนัด (29 เม.ย. 62) "
 				);				
@@ -221,7 +222,7 @@ if (!is_null($events['events'])) {
 				$txt = $t[$random_keys];
 					$messages = [
 								'type' => 'text',
-								'text' => $txt.$today_.$s3d.$s2d.$s1d.$s7d          
+								'text' => $txt.$today_.$s7d .$s3d.$s2d.$s1d         
 					];
 			}			
 			
