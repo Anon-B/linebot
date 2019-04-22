@@ -28,7 +28,8 @@ function get_url($urllink)
 }
 //---------------------------------//
 
-
+echo "OK";
+/*
 
 //ส่งแบบข้อความเดียว---push message------------------//
 // Example : https://gisbott.herokuapp.com/bot.php?send=answer&text=test
@@ -235,6 +236,6 @@ foreach ($client->parseEvents() as $event) {
 };
 //----------------------------------------------------------//
 
-echo "OK";
+*/
 
 ?>
