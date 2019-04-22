@@ -227,8 +227,8 @@ class LINEBotTiny {
     }
 
 
-    public function getProfile($userId) {
-    //public function getProfile($userId = null) {
+
+    public function getProfile($userId = null) {
         $header = array(
             'Authorization: Bearer ' . $this->channelAccessToken,
         );
@@ -247,6 +247,8 @@ class LINEBotTiny {
         }
         return json_decode($response);
     }
+
+
 
 
 
