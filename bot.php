@@ -57,37 +57,6 @@ if ( $_GET['send'] == 'answer' )
 
 
 
-if ( $_GET['send'] == 'hbd' )
-{
-	$text = array(
-			'type' => 'text',
-			'text' => $_GET['text']
-		);
-	$uid = "U08f8f734c798d00fb72aaaa02dd15da7"; // id nut
-	//$gid = "C67c2d145ca7be1b591c50c3b3831ada1";	  // id group GIS
-	if ( $_GET['uid'] != null )
-	{
-		$uid = $_GET['uid'];
-	}
-	$client->pushMessage($uid, $text);
-
-
-	$pic = 'https://gispwa.herokuapp.com/image/hbd.jpg';
-	// Push image
-	$client->pushMessage2(array( 
-		'to' => $uid,
-		'messages' => array(
-			array(
-				'type' => 'image',
-				'originalContentUrl' => $pic,
-				'previewImageUrl' => $pic
-			)
-		)
-	));
-
-
-}
-
 
 
 //push แบบ multi ใช้ pushMessage1 แบบ array มี sub
@@ -109,8 +78,8 @@ if ( $_GET['send'] == 'location' )
 			);       
 		
 
-	$uid = "U08f8f734c798d00fb72aaaa02dd15da7"; // id nut
-	//$gid = "C3959e1e52fb0b16f3f9d08c4ad2b0a97";	  // id group dev
+	$uid = "uhklllllllllllllllllllllllllhh"; // id nut
+
 	if ( $_GET['uid'] != null )
 	{
 		$uid = $_GET['uid'];
@@ -125,23 +94,12 @@ if ( $_GET['action'] == 'send' )
 {
 
 	if($_GET['name'] == 'gispwa5'){
-		$id = 'C67c2d145ca7be1b591c50c3b3831ada1';
+		$id = '###################';
 	}
 	if($_GET['name'] == 'gis'){
-		$id = 'C67c2d145ca7be1b591c50c3b3831ada1';
+		$id = '################';
 	}
-	if($_GET['name'] == 'dev'){
-		$id = 'C3959e1e52fb0b16f3f9d08c4ad2b0a97';
-	}
-	if($_GET['name'] == 'ploy'){
-		$id = 'C3959e1e52fb0b16f3f9d08c4ad2b0a97';
-	}
-	if($_GET['name'] == 'new'){
-		$id = 'U6d711483fa9f51d6934bac5a15373fb6gid ';
-	}	
-	if($_GET['name'] == 'nut'){
-		$id = 'U08f8f734c798d00fb72aaaa02dd15da7  ';
-	}
+
 
 
 	$text = array(
@@ -184,42 +142,7 @@ if (!is_null($events['events'])) {
 			$timestamp = $event['timestamp'];
 
 
-			if(preg_match('(ไป กปภ.|ไป การประปา|ไป สาขา|ไป ประปา|ไป )', $text) === 1) {
-
-				$pwacode = substr($text,-7);
-				//---------------------------------//
-				$urllink = 'https://gisweb1.pwa.co.th/lineservice/pwa_location/get_office_bot.php?pwa_code='.$pwacode; 
-				$str = get_url($urllink); //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
-
-				$split = explode(",", $str);
-				//echo $split[0];
-				//echo $split[1];
-				//echo $split[2];
-				
-				if ($split[3]){
-					$messages = [
-						"type"=> "location",
-						"title"=> "ตำแหน่ง",
-						"address"=> $split[3]." ".$split[2],
-						"latitude"=> $split[0],
-						"longitude"=> $split[1]
-					];
-				}
-				else{
-
-				$messages = [
-				'type' => 'text',
-				//'text' => $text
-				'text' => $text_reply
-				];
-
-
-				}
-
-			}
-
-
-			else if ($text == 'กปภ.') {
+			if ($text == 'กปภ.') {
 				$messages = [
 					"type"=> "location",
 					"title"=> "ตำแหน่ง กปภ.",
@@ -229,14 +152,6 @@ if (!is_null($events['events'])) {
 				];
 			}
 
-
-			else if ($text == 'ตรวจสอบพื้นที่ให้บริการ') {
-					$messages = [
-					'type' => 'text',
-					'text' => 'โปรดแชร์ Location เพื่อตรวจสอบพื้นที่ให้บริการ'
-					];
-
-			}
 
 			else if ($text == 'งานเกษียณ') {
 				$messages = [
@@ -382,6 +297,15 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
+		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
+				$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
+				$random_keys=array_rand($t,1);
+				$txt = $t[$random_keys];
+					$messages = [
+								'type' => 'text',
+								'text' => $t  .''          
+				];
+			}
 
 
     }
