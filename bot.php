@@ -42,12 +42,9 @@ if (!is_null($events['events'])) {
 				
 				$a1=["สวัสดี","หวัดดี","ดีค่ะ","ดีคับ","ดีครับ","ดีคร่า","ดีค่า"];
 				$a1len=count($a1);
-				#echo $a1[2];
-				#echo count($a1);
 
-				for ($x = 0; $x < count($a1); $x++) {
-					#echo "The number is: $a1[$x] ";
-					$chk = explode($$a1[$x],$text);	
+				for ($x = 0; $x < $a1len; $x++) {
+					$chk = explode($a1[$x],$text);	
 						if (chk[0]=""){
 							$gid = $event['source']['groupId'];
 							$uid = $event['source']['userId'];
