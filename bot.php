@@ -34,15 +34,7 @@ function get_url($urllink) {
 //---------------------------------//
 
 
-//	$gid = "Cf76ebe75b61229876514969581ff9fd8";	  // id group GISPWA5
 
-//-----------auto send----push message------------------//
-
-// Example : https://gispwa.herokuapp.com/bot.php?send=answer&text=test
-// Example : https://gispwa.herokuapp.com/bot.php?send=answer&text=test&uid=C3959e1e52fb0b16f3f9d08c4ad2b0a97
-
-
-// Exampleadminline : https://gispwa.herokuapp.com/bot.php?send=answer&text=test&id=C3959e1e52fb0b16f3f9d08c4ad2b0a97
 if ( $_GET['send'] == 'answer' )
 {
 	$text = array(
@@ -56,8 +48,7 @@ if ( $_GET['send'] == 'answer' )
 		$id = $_GET['id'];
 	}
 	else{
-		//$uid = "U08f8f734c798d00fb72aaaa02dd15da7"; // id nut
-		//$gid = "C67c2d145ca7be1b591c50c3b3831ada1";	  // id group GIS
+
 	}
 
 	$client->pushMessage($id, $text);
@@ -66,7 +57,6 @@ if ( $_GET['send'] == 'answer' )
 
 
 
-// Example : https://gispwasys.herokuapp.com/sysbot.php?send=hbd
 if ( $_GET['send'] == 'hbd' )
 {
 	$text = array(
@@ -129,7 +119,7 @@ if ( $_GET['send'] == 'location' )
 }
 
 
-//https://gispwa.herokuapp.com/bot.php?action=send&name=gis&text=โว้วๆๆๆ20ขอเสียงโหน่ยยย
+
 
 if ( $_GET['action'] == 'send' )
 {
@@ -199,7 +189,6 @@ if (!is_null($events['events'])) {
 				$pwacode = substr($text,-7);
 				//---------------------------------//
 				$urllink = 'https://gisweb1.pwa.co.th/lineservice/pwa_location/get_office_bot.php?pwa_code='.$pwacode; 
-				//$urllink = 'https://gisweb1.pwa.co.th/bot_line/service/get_office_bot.php?pwa_code='.$pwacode; 
 				$str = get_url($urllink); //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
 
 				$split = explode(",", $str);
@@ -372,6 +361,18 @@ function replyMsg($event, $client)
 		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า)', $msg) === 1) {
 
 			$t = 'การบ่นไม่ใช่การแก้ปัญหา และ การด่าก็ไม่ใช่วิธีการแก้ไข'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
+		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $msg) === 1) {
+
+			$t = 'สวัสดีครับ'; 	
         	$a = array(
 		                array(
 							'type' => 'text',
