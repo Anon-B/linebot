@@ -258,7 +258,7 @@ function replyMsg($event, $client)
     	//มีด้วยกัน 2 field คือ type = “text” และ text ส่งได้สูงสุด 2000 ตัวอักษร สามารถใช้ emoticons ได้ตามมาตรฐาน unicode
         $msg = $event['message']['text'];
         if( $msg == 'ทดสอบ'){ 
-			$t = 'Test ละสิ'; 	
+			$t = 'ทอสอบๆ ฮัลโหล เทสๆๆ หนึ่งสองสาม'; 	
         	$a = array(
 						array(
 			                'type' => 'sticker',
@@ -285,9 +285,9 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีค่า)', $msg) === 1) {
+		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีครัช|ดีคราฟ|ดีคะ|สวัสดีครับ|สวัสดีค่ะ|หวัดดีครับ|หวัดดีค่ะ)', $msg) === 1) {
 
-			$t = 'สวัสดีครับ'; 	
+			$t = 'สวัสดีครับ มีอะไรให้ช่วยมั้ยครับ'; 	
         	$a = array(
 		                array(
 							'type' => 'text',
@@ -332,7 +332,7 @@ function replyMsg($event, $client)
 					);
 			$client->replyMessage1($event['replyToken'],$a);
 
-		}
+		}/*	
 		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
 			$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
 			$random_keys=array_rand($t,1);
@@ -344,7 +344,7 @@ function replyMsg($event, $client)
 			}
 
 		else {
-			/*	
+			
 			$t=array("1","2","3","4","5");
 			$random_keys=array_rand($t,1);
 			$r = $t[$random_keys];
