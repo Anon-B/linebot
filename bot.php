@@ -273,7 +273,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 		}
 
-		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า)', $msg) === 1) {
+		else if (preg_match('(ด่า|เลว|ไม่ดี|โดนว่า|น่าเบื่อ|รำคาญ|ชั่ว|สันดาน|บ่น|ถูกว่า|เหี้ย)', $msg) === 1) {
 
 			$t = 'การบ่นไม่ใช่การแก้ปัญหา และ การด่าก็ไม่ใช่วิธีการแก้ไข'; 	
         	$a = array(
@@ -321,7 +321,19 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-		else if (preg_match('(ตลก|ขำ|เล่นตลก)', $msg) === 1) {
+		else if (preg_match('(งาน|ช่วยงาน)', $msg) === 1) {
+
+			$t = 'ช่วยอะไรไม่ได้หรอก ทำเองนะจ๊ะ'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
+		else if (preg_match('(ตลก|ขำ|เล่นตลก|555|หัวเราะ|ฮ่า|ฮา)', $msg) === 1) {
 
 			$t = 'ฮั่นเเน่ ชอบเร่งเครื่องเหรอเรา'; 	
         	$a = array(
@@ -333,8 +345,20 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
+		else if (preg_match('(ลิเวอ์|ลิเวอ์พูล|เเชป์ม|จะได้แชป์ม|ทีมอะไรจะได้แชป์ม|บอล|พรีเมียร์ลีก)', $msg) === 1) {
+
+			$t = 'ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $msg) === 1) {
-			$txt=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
+			$txt=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย","ตั้งให้หน่อย");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
@@ -354,7 +378,7 @@ function replyMsg($event, $client)
 			$r = $txt[$random_keys];
 				
 			if($r == "3"){
-				$txt=array("ครับ","คะ");
+				$txt=array("ครับ","คะ","รอแป๊ป","ถามคำถามใหม่");
 				$random_keys=array_rand($txt,1);
 				$t = $txt[$random_keys];
 				$a =array(
@@ -366,6 +390,23 @@ function replyMsg($event, $client)
 				$client->replyMessage1($event['replyToken'],$a);
 			}
 			else if($r == "2"){
+					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
+					$random_keys=array_rand($sticker,1);
+					$txt = $sticker[$random_keys];
+					$split = explode(",", $txt);
+					$p = $split[0];
+					$s = $split[1];
+					//echo $split[0];
+					$a =array(
+							array(
+							'type' => 'sticker',
+							'packageId' => $p,
+							'stickerId' => $s
+							)
+					);
+					$client->replyMessage1($event['replyToken'],$a);
+				}
+				else if($r == "3"){
 					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
 					$random_keys=array_rand($sticker,1);
 					$txt = $sticker[$random_keys];
