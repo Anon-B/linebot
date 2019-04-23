@@ -287,7 +287,8 @@ function replyMsg($event, $client)
 		}
 		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีครัช|ดีคราฟ|ดีคะ|สวัสดีครับ|สวัสดีค่ะ|หวัดดีครับ|หวัดดีค่ะ)', $msg) === 1) {
 
-			$t = 'สวัสดีครับ มีอะไรให้ช่วยมั้ยครับ'; 	
+			$t = 'สวัสดีครับ เจ้านาย
+			ข้าก็นาย เพราะข้าเป็น ผู้ช้าย แฮร่'; 	
         	$a = array(
 		                array(
 							'type' => 'text',
@@ -297,6 +298,30 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
+		else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง)', $msg) === 1) {
+			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความไง ไม่พิมพ์มาสักที","สระเอือกจัง","หวายๆๆๆ ไม่บอก");
+			$random_keys=array_rand($txt,1);
+			$t = $txt[$random_keys];
+				$a =array(
+						array(
+							'type' => 'text',
+							'text' => $t  .''  
+							)							
+				);
+			$client->replyMessage1($event['replyToken'],$a);
+			}
+		else if (preg_match ('(ลิเวอ์|ลิเวอ์พูล|เเชป์ม|จะได้แชป์ม|ทีมอะไรจะได้แชป์ม|บอล|พรีเมียร์ลีก)', $msg) === 1) {
+			$txt=array ("ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล","ไม่ใช่หงส์","ที่เเน่ๆไม่ใช่เป็ด","อย่ามโน");
+			$random_keys=array_rand($txt,1);
+			$t = $txt[$random_keys];
+				$a =array(
+						array(
+							'type' => 'text',
+							'text' => $t  .''  
+							)							
+				);
+			$client->replyMessage1($event['replyToken'],$a);
+			}
 		else if (preg_match('(สบายดี|สบายดีไหม|สบายดีป่าว)', $msg) === 1) {
 
 			$t = 'สบายดีเเต่ไม่มีตังใช้ แฮร่!!!'; 	
