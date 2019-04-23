@@ -425,23 +425,7 @@ function replyMsg($event, $client)
 					);
 					$client->replyMessage1($event['replyToken'],$a);
 				}
-				else if($r == "3"){
-					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
-					$random_keys=array_rand($sticker,1);
-					$txt = $sticker[$random_keys];
-					$split = explode(",", $txt);
-					$p = $split[0];
-					$s = $split[1];
-					//echo $split[0];
-					$a =array(
-							array(
-							'type' => 'sticker',
-							'packageId' => $p,
-							'stickerId' => $s
-							)
-					);
-					$client->replyMessage1($event['replyToken'],$a);
-				}
+				
 				
 			else{
 			}
