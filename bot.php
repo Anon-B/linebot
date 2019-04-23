@@ -322,7 +322,7 @@ function replyMsg($event, $client)
 				);
 			$client->replyMessage1($event['replyToken'],$a);
 			}
-			/*else if (preg_match('(นิทาน|เล่าเรื่อง|เล่า|พูด)', $msg) === 1) {
+			else if (preg_match('(นิทาน|เล่าเรื่อง|เล่า|พูด)', $msg) === 1) {
 			$txt=array ("ง่วงก็ไปนอน ","ไปนอน ","เหนื่อยเป็นนะ");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
@@ -333,7 +333,7 @@ function replyMsg($event, $client)
 							)							
 				);
 			$client->replyMessage1($event['replyToken'],$a);
-			}
+			}/*
 		else if (preg_match('(เหงา|ช่วยด้วย|คุยเป็นพื่อน|คุยหน่อย|คุย)', $msg) === 1) {
 			$txt=array ("ระฆังดังเพราะคนตี คนดีๆตึงมีคนเอา ","อย่าเสียใจไปเลยเเค่่เค้านนั้น ","คุยกับเราได้นะ","พระเอกมาเลี้ยวววววววว");
 			$random_keys=array_rand($txt,1);
