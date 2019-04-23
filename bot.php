@@ -285,7 +285,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีครัช|ดีคราฟ|ดีคะ|สวัสดีครับ|หวัดดีค่ะ)', $msg) === 1) {
+		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีครัช|ดีคราฟ|ดีคะ|สวัสดีครับ|สวัสดีค่ะ|หวัดดีครับ|หวัดดีค่ะ)', $msg) === 1) {
 
 			$t = 'สวัสดีครับ มีอะไรให้ช่วยมั้ยครับ'; 	
         	$a = array(
@@ -345,39 +345,20 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-			else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง)', $msg) === 1) {
-
-
-			$txt=array('นั่งเล่นมั่ง ','รอตอบข้อความไง ไม่พิมพ์มาสักที','สระเอือกจัง','หวายๆๆๆ ไม่บอก');
-			$random_keys=array_rand($txt,1);
-			$t = $txt[$random_keys];
-				$a =array(
-						array(
-							'type' => 'text',
-							'text' => $t  .''  
-							)							
-				);
-			$client->replyMessage1($event['replyToken'],$a);
-			}
 		else if (preg_match('(ลิเวอ์|ลิเวอ์พูล|เเชป์ม|จะได้แชป์ม|ทีมอะไรจะได้แชป์ม|บอล|พรีเมียร์ลีก)', $msg) === 1) {
 
-
-			$txt=array('ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล','ไม่ใช่หงส์','ที่เเน่ๆไม่ใช่เป็ด','อย่ามโน');
-			$random_keys=array_rand($txt,1);
-			$t = $txt[$random_keys];
-				$a =array(
-						array(
+			$t = 'ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล'; 	
+        	$a = array(
+		                array(
 							'type' => 'text',
-							'text' => $t  .''  
-							)							
-				);
+							'text' => $t . ''				
+						)
+					);
 			$client->replyMessage1($event['replyToken'],$a);
-			}
-
 
 		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $msg) === 1) {
-			$txt=array('ลองทายดูสิ','ทายซิ','บอกดีมั้ย',"ตั้งให้หน่อย');
+			$txt=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย","");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
@@ -397,7 +378,7 @@ function replyMsg($event, $client)
 			$r = $txt[$random_keys];
 				
 			if($r == "3"){
-				$txt=array("ครับ","รอแป๊ป","ถามคำถามใหม่","อย่าให้โมโหนะ","กวนเราหน่อย");
+				$txt=array("ครับ","คะ","รอแป๊ป","ถามคำถามใหม่");
 				$random_keys=array_rand($txt,1);
 				$t = $txt[$random_keys];
 				$a =array(
@@ -425,7 +406,6 @@ function replyMsg($event, $client)
 					);
 					$client->replyMessage1($event['replyToken'],$a);
 				}
-				
 				
 			else{
 			}
