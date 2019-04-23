@@ -298,28 +298,28 @@ function replyMsg($event, $client)
 
 		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
-				$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
-				$random_keys=array_rand($t,1);
-				$txt = $t[$random_keys];
-					$messages = [
-								'type' => 'text',
-								'text' => $t  .''          
+			$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
+			$random_keys=array_rand($t,1);
+			$txt = $t[$random_keys];
+				$messages = [
+						'type' => 'text',
+						'text' => $t  .''          
 				];
 			}
 
-		else {
+		else if{
 				
-				$ta=array("1","2","3","4","5");
-				$random=array_rand($ta,1);
-				$r = $ta[$random];
+			$t=array("1","2","3","4","5");
+			$random_keys=array_rand($t,1);
+			$r = $t[$random_keys];
 				
-				if($r == "3"){
-					$t=array("ครับ","คะ");
-					$random_keys=array_rand($t,1);
-					$t = $t[$random_keys];
-					$messages = [
-								'type' => 'text',
-								'text' => $t          
+			if($r == "3"){
+				$t=array("ครับ","คะ");
+				$random_keys=array_rand($t,1);
+				$t = $t[$random_keys];
+				$messages = [
+						'type' => 'text',
+						'text' => $t          
 					];
 				}
 				else if($r == "2"){
@@ -331,9 +331,9 @@ function replyMsg($event, $client)
 					$s = $split[1];
 					//echo $split[0];
 					$messages = [
-								'type' => 'sticker',
-								'packageId' => $p,
-								'stickerId' => $s
+							'type' => 'sticker',
+							'packageId' => $p,
+							'stickerId' => $s
 					];
 				}
 				
