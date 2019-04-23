@@ -287,8 +287,8 @@ function replyMsg($event, $client)
 		}
 		else if (preg_match('(สวัสดี|หวัดดี|ดีค่ะ|ดีคับ|ดีครับ|ดีคร่า|ดีครัช|ดีคราฟ|ดีคะ|สวัสดีครับ|สวัสดีค่ะ|หวัดดีครับ|หวัดดีค่ะ)', $msg) === 1) {
 
-			$t = 'สวัสดีครับ เจ้านาย
-			ข้าก็นาย เพราะข้าเป็น ผู้ช้าย แฮร่'; 	
+			$t = 'สวัสดีครับ '
+			; 	
         	$a = array(
 		                array(
 							'type' => 'text',
@@ -345,19 +345,7 @@ function replyMsg($event, $client)
 							)							
 				);
 			$client->replyMessage1($event['replyToken'],$a);
-			}/*
-		else if (preg_match('(เหงา|ช่วยด้วย|คุยเป็นพื่อน|คุยหน่อย|คุย)', $msg) === 1) {
-			$txt=array ("ระฆังดังเพราะคนตี คนดีๆตึงมีคนเอา ","อย่าเสียใจไปเลยเเค่่เค้านนั้น ","คุยกับเราได้นะ","พระเอกมาเลี้ยวววววววว");
-			$random_keys=array_rand($txt,1);
-			$t = $txt[$random_keys];
-				$a =array(
-						array(
-							'type' => 'text',
-							'text' => $t  .''  
-							)							
-				);
-			$client->replyMessage1($event['replyToken'],$a)
-			}*/
+			}
 			else if (preg_match('(ร้องเพลง|ร้อง|)', $msg) === 1) {
 			$txt=array ("A B C D E F จีีีีีีี ","ไก่ย่างๆๆ ไก่ย่างถูกเผาๆ ","เพราะว่าฉันคือวิญาญณณณณณ","พระเอกมาจนได้ หมดเวลาจะใช้ตัวเเสดงแทน");
 			$random_keys=array_rand($txt,1);
@@ -371,7 +359,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 			}
 		else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง|ทำไร)', $msg) === 1) {
-			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความไง ไม่พิมพ์มาสักที","สระเอือกจัง","หวายๆๆๆ ไม่บอก");
+			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความครับ ไม่พิมพ์มาสักที","ไม่บอกได้ไหม","หวายๆๆๆ ไม่บอก");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
