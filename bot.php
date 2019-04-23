@@ -345,7 +345,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-			else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|)', $msg) === 1) {
+			else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทพไรได้บ้าง)', $msg) === 1) {
 
 
 			$txt=array("'นั่งเล่นมั่ง '","รอตอบข้อความไง ไม่พิมพ์มาสักที","สระเอือกจัง","หวายๆๆๆ ไม่บอก");
