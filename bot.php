@@ -345,6 +345,49 @@ function replyMsg($event, $client)
 				);
 			$client->replyMessage1($event['replyToken'],$a);
 			}
+			
+		
+		else {	
+			
+			$txt=array("1","2","3","4","5");
+			$random_keys=array_rand($txt,1);
+			$r = $txt[$random_keys];
+				
+			if($r == "3"){
+				$txt=array("ครับ","คะ");
+				$random_keys=array_rand($txt,1);
+				$t = $txt[$random_keys];
+				$a =array(
+						array(
+						'type' => 'text',
+						'text' => $t 
+							)
+					);
+				$client->replyMessage1($event['replyToken'],$a);
+			}
+			else if($r == "2"){
+					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
+					$random_keys=array_rand($sticker,1);
+					$txt = $sticker[$random_keys];
+					$split = explode(",", $txt);
+					$p = $split[0];
+					$s = $split[1];
+					//echo $split[0];
+					$a =array(
+							array(
+							'type' => 'sticker',
+							'packageId' => $p,
+							'stickerId' => $s
+							)
+					);
+					$client->replyMessage1($event['replyToken'],$a);
+				}
+				
+			else{
+			}
+			
+			
+		}
 		
     }
 
