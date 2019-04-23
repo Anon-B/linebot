@@ -307,7 +307,7 @@ function replyMsg($event, $client)
 				];
 			}
 
-		else if{
+		/*else {
 				
 			$t=array("1","2","3","4","5");
 			$random_keys=array_rand($t,1);
@@ -321,8 +321,8 @@ function replyMsg($event, $client)
 						'type' => 'text',
 						'text' => $t          
 					];
-				}
-				else if($r == "2"){
+			}
+			else if($r == "2"){
 					$sticker=array("2,23","2,39","2,161","2,170","2,161","2,33");
 					$random_keys=array_rand($sticker,1);
 					$t = $sticker[$random_keys];
@@ -335,12 +335,13 @@ function replyMsg($event, $client)
 							'packageId' => $p,
 							'stickerId' => $s
 					];
-				}
-				
-				
-				else{
-				}
 			}
+				
+			else{
+			}
+			*/
+			
+		}
     }
 
     elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
