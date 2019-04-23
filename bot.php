@@ -345,16 +345,35 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
+			else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|)', $msg) === 1) {
+
+
+			$txt=array("'นั่งเล่นมั่ง '","รอตอบข้อความไง ไม่พิมพ์มาสักที","สระเอือกจัง","หวายๆๆๆ ไม่บอก");
+			$random_keys=array_rand($txt,1);
+			$t = $txt[$random_keys];
+				$a =array(
+						array(
+							'type' => 'text',
+							'text' => $t  .''  
+							)							
+				);
+			$client->replyMessage1($event['replyToken'],$a);
+			}
 		else if (preg_match('(ลิเวอ์|ลิเวอ์พูล|เเชป์ม|จะได้แชป์ม|ทีมอะไรจะได้แชป์ม|บอล|พรีเมียร์ลีก)', $msg) === 1) {
 
-			$t = 'ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล'; 	
-        	$a = array(
-		                array(
+
+			$txt=array("'ฮั่นเเน่ ว่าวเเชป์มอย่างเคย ลิเวอร์พูล'","ไม่ใช่หงส์","ที่เเน่ๆไม่ใช่เป็ด","อย่ามโน");
+			$random_keys=array_rand($txt,1);
+			$t = $txt[$random_keys];
+				$a =array(
+						array(
 							'type' => 'text',
-							'text' => $t . ''				
-						)
-					);
+							'text' => $t  .''  
+							)							
+				);
 			$client->replyMessage1($event['replyToken'],$a);
+			}
+
 
 		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $msg) === 1) {
@@ -378,7 +397,7 @@ function replyMsg($event, $client)
 			$r = $txt[$random_keys];
 				
 			if($r == "3"){
-				$txt=array("ครับ","คะ","รอแป๊ป","ถามคำถามใหม่");
+				$txt=array("ครับ","รอแป๊ป","ถามคำถามใหม่","อย่าให้โมโหนะ","กวนเราหน่อย");
 				$random_keys=array_rand($txt,1);
 				$t = $txt[$random_keys];
 				$a =array(
