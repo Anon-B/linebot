@@ -296,7 +296,7 @@ function replyMsg($event, $client)
 					);
 			$client->replyMessage1($event['replyToken'],$a);
 
-		}/*	
+		}
 		else if (preg_match('(สบายดี|สบายดีไหม|สบายดีป่าว)', $msg) === 1) {
 
 			$t = 'สบายดีเเต่ไม่มีตังใช้ แฮร่!!!'; 	
@@ -343,7 +343,7 @@ function replyMsg($event, $client)
 				);
 			}
 
-		else {
+		else {/*	
 			
 			$t=array("1","2","3","4","5");
 			$random_keys=array_rand($t,1);
