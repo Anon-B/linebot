@@ -238,7 +238,7 @@ if (!is_null($events['events'])) {
 
 
 
-echo "OK";
+echo "OK BOT";
 
 
 
@@ -338,8 +338,10 @@ function replyMsg($event, $client)
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
-						'type' => 'text',
-						'text' => $t  .''          
+						array(
+							'type' => 'text',
+							'text' => $t  .''  
+							)							
 				);
 			$client->replyMessage1($event['replyToken'],$a);
 			}
