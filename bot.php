@@ -307,8 +307,8 @@ function replyMsg($event, $client)
 				];
 			}
 
-		/*else {
-				
+		else {
+			/*	
 			$t=array("1","2","3","4","5");
 			$random_keys=array_rand($t,1);
 			$r = $t[$random_keys];
