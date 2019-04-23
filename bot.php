@@ -335,7 +335,7 @@ function replyMsg($event, $client)
 		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
 			$txt=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
-			$random_keys=array_rand($t,1);
+			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
 						'type' => 'text',
