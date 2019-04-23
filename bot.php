@@ -297,14 +297,50 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
+		else if (preg_match('(สบายดี|สบายดีไหม|สบายดีป่าว)', $msg) === 1) {
+
+			$t = 'สบายดีเเต่ไม่มีตังใช้ แฮร่!!!'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
+		else if (preg_match('(หวย|สลากกินเเบ่ง)', $msg) === 1) {
+
+			$t = 'เลขที่ออก  1  2  3 ... แฮร่!!! ไม่บอกหรอก'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
+		else if (preg_match('(ตลก|ขำ|เล่นตลก)', $msg) === 1) {
+
+			$t = 'ฮั่นเเน่ ชอบเร่งเครื่องเหรอเรา'; 	
+        	$a = array(
+		                array(
+							'type' => 'text',
+							'text' => $t . ''				
+						)
+					);
+			$client->replyMessage1($event['replyToken'],$a);
+
+		}
 		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
 			$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
 			$random_keys=array_rand($t,1);
 			$txt = $t[$random_keys];
-				$messages = [
+				$messages = (
 						'type' => 'text',
 						'text' => $t  .''          
-				];
+				);
 			}
 
 		else {
