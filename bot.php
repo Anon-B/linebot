@@ -333,15 +333,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 
 		}
-		else if (preg_match('(ชื่อ|ชื่อไร)', $text) === 1) {
-			$t=array("ลองทายดูสิ","ทายซิ","บอกดีมั้ย");
-			$random_keys=array_rand($t,1);
-			$txt = $t($random_keys);
-				$messages = (
-						'type' => 'text',
-						'text' => $t  .''          
-				);
-			}
+		
 		
     }
 
