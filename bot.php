@@ -346,7 +346,7 @@ function replyMsg($event, $client)
 				);
 			$client->replyMessage1($event['replyToken'],$a);
 			}
-			else if (preg_match('(ร้องเพลง|ร้อง|)', $msg) === 1) {
+			/*else if (preg_match('(ร้องเพลง|ร้อง|)', $msg) === 1) {
 			$txt=array ("A B C D E F จีีีีีีี ","ไก่ย่างๆๆ ไก่ย่างถูกเผาๆ ","เพราะว่าฉันคือวิญาญณณณณณ","พระเอกมาจนได้ หมดเวลาจะใช้ตัวเเสดงแทน");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
@@ -357,7 +357,7 @@ function replyMsg($event, $client)
 							)							
 				);
 			$client->replyMessage1($event['replyToken'],$a);
-			}
+			}*/
 		else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง|ทำไร)', $msg) === 1) {
 			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความครับ ไม่พิมพ์มาสักที","ไม่บอกได้ไหม","หวายๆๆๆ ไม่บอก");
 			$random_keys=array_rand($txt,1);
