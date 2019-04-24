@@ -8,13 +8,13 @@ $new = json_encode(array(
 	'answer' => 'ทำได้ทุกอย่าง'
 ));
 
-$opts = array(
-	'http' => array(
+	$opts = array(
+		'http' => array(
 		'method' => "POST",
 		'header' => "Content-type: application/json",
 		'content' => $new
-	)
-);
+		)
+	);
 
 $context = stream_context_create($opts);
 $returnVal = file_get_contents($url, false, $context);
