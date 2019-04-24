@@ -311,7 +311,7 @@ function replyMsg($event, $client)
 			$client->replyMessage1($event['replyToken'],$a);
 			}
 			else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง|ทำไร)', $msg) === 1) {
-			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความไง ไม่พิมพ์มาสักที","สระเอือกจัง","หวายๆๆๆ ไม่บอก");
+			$txt=array ("นั่งเล่นมั่ง ","ตอบข้อความไง ไม่พิมพ์มาสักที","หวายๆๆๆ ไม่บอก");
 			$random_keys=array_rand($txt,1);
 			$t = $txt[$random_keys];
 				$a =array(
@@ -355,7 +355,7 @@ function replyMsg($event, $client)
 							'type' => 'text',
 							'text' => $t  .''  
 							)							
-				);
+				);สระเอือกจัง
 			$client->replyMessage1($event['replyToken'],$a);
 			}*/
 		else if (preg_match('(ทำอะไร|ทำไรอยู่|ทามราย|ทำไรได้บ้าง|ทำไร)', $msg) === 1) {
