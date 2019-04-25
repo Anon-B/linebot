@@ -10,7 +10,7 @@ $get_query = json_decode($json_query);
 
 
 $_id = '';
-$url_id = 'https://api.mlab.com/api/1/databases/linedb/collections/mynewcollection/'.$_id.'?apiKey='.$api_key;
+
 
 
 
@@ -38,7 +38,7 @@ foreach ($get_query as &$get_query_each){
 					'content' => $newupdate
 				)
 			);
-
+			$url_id = 'https://api.mlab.com/api/1/databases/linedb/collections/mynewcollection/'.$_id.'?apiKey='.$api_key;
 			$contextu = stream_context_create($optsu);
 			//echo $contextu;
 			$returnValup = file_get_contents($url_id, false, $contextu);
