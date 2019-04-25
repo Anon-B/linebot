@@ -605,7 +605,7 @@ function replyMsg($event, $client)
 
 
 
-
+	}
 
 
 
