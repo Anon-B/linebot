@@ -252,8 +252,7 @@ file_put_contents("test.txt", $t );
 
 
 
-function replyMsg($event, $client)
-{
+function replyMsg($event, $client){
     if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
     	//มีด้วยกัน 2 field คือ type = “text” และ text ส่งได้สูงสุด 2000 ตัวอักษร สามารถใช้ emoticons ได้ตามมาตรฐาน unicode
         $msg = $event['message']['text'];
@@ -602,10 +601,12 @@ function replyMsg($event, $client)
 					echo '<br>';
 
 				}
+	}
 				
 
 
 	} */
+	}
 
 
 
