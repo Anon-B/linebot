@@ -601,9 +601,8 @@ function replyMsg($event, $client){
 					echo '<br>';
 
 				}
-		}
-				
-
+		
+	
 
 	} 
 
