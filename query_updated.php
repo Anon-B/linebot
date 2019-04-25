@@ -9,7 +9,7 @@ $newupdate = json_encode(
 		'$set' => array('answer'=> 'นนท์เองครับ')
 		)
 	);
-
+echo  $url_up;
 
 $optsu = array(
 	'http' => array(
@@ -22,9 +22,12 @@ $optsu = array(
 $contextu = stream_context_create($optsu);
 //echo $contextu;
 $returnValup = file_get_contents($url_up, false, $contextu);
-echo 'Updated: '.$returnValup;
+echo 'Updated: '.$returnValup; 
+///$returnValup ถ้าอัพเดทสำเร็จ Updated: { "n" : 1}
 echo '<hr>';
 echo '<br>';
+
+///
 	
 
 ?>
