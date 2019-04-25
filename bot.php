@@ -582,10 +582,11 @@ function replyMsg($event, $client)
 				$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
 				$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
 
-				$new = json_encode(array(
-					'address' => '$address',
-					'latitude' => '$latitude',
-					'longitude'=> $longitude
+				$new = json_encode(
+					array(
+						'address' => '$address',
+						'latitude' => '$latitude',
+						'longitude'=> $longitude
 				));
 
 					$opts = array(
