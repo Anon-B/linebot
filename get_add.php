@@ -1,7 +1,7 @@
 <?php
 
 $api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
-$url = ('https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
 
 $new = json_encode(array(
 	'question' => 'ทำอะไรได้บ้าง',
