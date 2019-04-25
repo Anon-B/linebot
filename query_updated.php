@@ -17,7 +17,7 @@ $_id = '';
 
 foreach ($get_query as &$get_query_each){
 		//get id
-	$id = $get_query_each->_id;
+	$id = $get_query_each;
 	foreach ($id as $key => $value){
 	
 		if ($key === '$oid'){
