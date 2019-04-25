@@ -555,7 +555,7 @@ function replyMsg($event, $client){
 		$uid = $event['source']['userId'];
 		$gid = $event['source']['groupId'];
 
-
+		
 
 				if ($gid){
 					$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
@@ -577,11 +577,23 @@ function replyMsg($event, $client){
 								) 
 							)
 					);
+					
+					
+					
+					
+					
+					
 					$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
 					$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
 
+
+
+
+
+
 					$new = json_encode(
 						array(
+							'id' => $uid,
 							'address' => $address,
 							'latitude' => $latitude,
 							'longitude'=> $longitude
