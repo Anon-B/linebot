@@ -546,7 +546,7 @@ function replyMsg($event, $client)
     }
 } */
 	
-
+/* 
 	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
 		$latitude = $event['message']['latitude'];
@@ -605,21 +605,9 @@ function replyMsg($event, $client)
 				
 
 
-	}
+	} */
 
 
-
-/* 
-				   $client->replyMessage1($event['replyToken'],array(
-							array(
-									"type"=> "location",
-									"title"=> "ตำแหน่งของท่าน",
-									"address"=> $address,
-									"latitude"=> $latitude,
-									"longitude"=> $longitude
-							)
-					   )
-					); */
 
 
 // listen  $client->parseEvents()  ควรเอาไว้ล่างสุด ถ้าเอาไว้ด้านบนจะทำให้ pushMsg ไม่ได้
