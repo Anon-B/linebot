@@ -4,12 +4,17 @@ $api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
 
 $url_up = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key.'&q={"question":"ใครครับ"}';
 
+$json_query = file_get_contents($url_up);
+$get_query = json_decode($json_query);
+echo 'reso ' $json_query[0]['_id'];
+echo  'decode_get '$get_query;
+
 $newupdate = json_encode(
 	array(
 		'$set' => array('answer'=> 'นนท์เองครับ')
 		)
 	);
-echo  $url_up;
+
 
 $optsu = array(
 	'http' => array(
