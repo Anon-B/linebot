@@ -9,7 +9,7 @@ $get_query = json_decode($json_query);
 
 
 
-$_id = '';
+$k_id = '';
 
 
 
@@ -17,13 +17,13 @@ $_id = '';
 
 foreach ($get_query as &$get_query_each){
 		//get id
-	$id = $get_query_each;
+	$id = $get_query_each->_id;
 	foreach ($id as $key => $value){
 	
 		if ($key === '$oid'){
 			echo $value . ": ";
-			$_id = $value;
-			$url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$_id.'?apiKey='.$api_key;
+			$k_id = $value;
+			$url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$k_id.'?apiKey='.$api_key;
 			$newupdate = json_encode(
 			array(
 				'$set' => array('answer'=> 'ฉันไง')
