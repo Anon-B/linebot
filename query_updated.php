@@ -10,7 +10,7 @@ echo 'result --' .$json_query;
 
 echo '<br>';
 /* echo 'decode_get --'.$get_query[0]['_id']; */
-echo 'decode_get --'.$get_query;
+echo 'decode_get --'.$get_query[0];
 echo '<br>';
 $newupdate = json_encode(
 	array(
