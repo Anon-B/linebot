@@ -24,7 +24,7 @@ $optsu = array(
 );
 
 $contextu = stream_context_create($optsu);
-echo $contextu;
+//echo $contextu;
 $returnValup = file_get_contents($url_up, false, $contextu);
 echo 'Updated: '.$returnValup;
 echo '<hr>';
