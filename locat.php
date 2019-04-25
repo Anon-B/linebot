@@ -91,6 +91,7 @@ function replyMsg($event, $client){
 					); */
 
     }
+echo 'ok location';
 }
 
 
