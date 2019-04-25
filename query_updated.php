@@ -18,11 +18,13 @@ foreach ($get_query as &$get_query_each){
 	foreach ($id as $key => $value){
 	
 		if ($key === '$oid'){
-			echo $value . ": ";
+			//echo $value . ": ";
 			
-			/* 
+			 
 			$_id = $value;
 			$url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$_id.'?apiKey='.$api_key;
+			echo $url_id ;
+			/*
 			$newupdate = json_encode(
 				array(
 					'$set' => array('answer'=> 'ฉันไง')
@@ -54,8 +56,8 @@ foreach ($get_query as &$get_query_each){
 	}
 
 		// get question and answer
-		echo $get_query_each->question . '-' . $get_query_each->answer;
-		echo '<hr>';
+/* 		echo $get_query_each->question . '-' . $get_query_each->answer;
+		echo '<hr>'; */
 		
 		//echo "lll".$value[0];
 	
