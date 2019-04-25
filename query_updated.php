@@ -6,10 +6,15 @@ $url_up = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint
 
 $json_query = file_get_contents($url_up);
 $get_query = json_decode($json_query);
-echo 'reso --' .$json_query;
+echo 'result --' .$json_query;
 echo "                                 ";
+echo '<br>';
 echo 'decode_get --'.$get_query[0]['_id'];
 echo "                                 ";
+echo '<br>';
+
+
+
 $newupdate = json_encode(
 	array(
 		'$set' => array('answer'=> 'นนท์เองครับ')
