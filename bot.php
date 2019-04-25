@@ -578,31 +578,32 @@ function replyMsg($event, $client)
 								) 
 							)
 					);
+					$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
+					$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+
+					$new = json_encode(
+						array(
+							'address' => '$address',
+							'latitude' => '$latitude',
+							'longitude'=> $longitude
+					));
+
+						$opts = array(
+							'http' => array(
+								'method' => "POST",
+								'header' => "Content-type: application/json",
+								'content' => $new
+							)
+						);
+
+					$context = stream_context_create($opts);
+					$returnVal = file_get_contents($url, false, $context);
+					echo 'Added: '.$returnVal;
+					echo '<hr>';
+					echo '<br>';
+
 				}
-				$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
-				$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
-
-				$new = json_encode(
-					array(
-						'address' => '$address',
-						'latitude' => '$latitude',
-						'longitude'=> $longitude
-				));
-
-					$opts = array(
-						'http' => array(
-							'method' => "POST",
-							'header' => "Content-type: application/json",
-							'content' => $new
-						)
-					);
-
-				$context = stream_context_create($opts);
-				$returnVal = file_get_contents($url, false, $context);
-				echo 'Added: '.$returnVal;
-				echo '<hr>';
-				echo '<br>';
-
+				
 
 
 	}
