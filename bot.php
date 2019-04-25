@@ -583,8 +583,8 @@ function replyMsg($event, $client)
 
 					$new = json_encode(
 						array(
-							'address' => '$address',
-							'latitude' => '$latitude',
+							'address' => $address,
+							'latitude' => $latitude,
 							'longitude'=> $longitude
 					));
 
