@@ -12,9 +12,6 @@ $get_query = json_decode($json_query);
 $_id = '';
 
 
-
-
-
 foreach ($get_query as &$get_query_each){
 		//get id
 	$id = $get_query_each->_id;
@@ -61,6 +58,7 @@ foreach ($get_query as &$get_query_each){
 		//echo "lll".$value[0];
 	
 	}
+	exit();
 
 //echo 'result --' .$json_query;
 
