@@ -19,6 +19,7 @@ foreach ($get_quest as &$get_quest_each){
 		// get question and answer
 		echo $get_quest_each->question . '-' . $get_quest_each->answer;
 		echo '<hr>';
+		echo "lll".$value[0];
 
 	}
 	exit();
