@@ -6,11 +6,29 @@ $url_up = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint
 
 $json_query = file_get_contents($url_up);
 $get_query = json_decode($json_query);
-echo 'result --' .$json_query;
 
-echo '<br>';
-/* echo 'decode_get --'.$get_query[0]['_id']; */
-echo 'decode_get --'.$get_query[0];
+
+foreach ($get_query as &$get_query_each){
+		//get id
+	$id = $get_query_each->_id;
+	foreach ($id as $key => $value){
+		if ($key === '$oid'){
+			echo $value . ": ";
+		}
+	}
+
+		// get question and answer
+		echo $get_query_each->question . '-' . $get_query_each->answer;
+		echo '<hr>';
+		//echo "lll".$value[0];
+
+	}
+
+//echo 'result --' .$json_query;
+
+
+/* 
+
 echo '<br>';
 $newupdate = json_encode(
 	array(
@@ -33,7 +51,7 @@ $returnValup = file_get_contents($url_up, false, $contextu);
 echo 'Updated: '.$returnValup; 
 ///$returnValup ถ้าอัพเดทสำเร็จ Updated: { "n" : 1}
 echo '<hr>';
-echo '<br>';
+echo '<br>'; */
 
 ///
 	
