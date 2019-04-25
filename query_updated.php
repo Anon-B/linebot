@@ -9,7 +9,7 @@ $get_query = json_decode($json_query);
 
 
 
-$t_id = '';
+$_id = '';
 
 
 
@@ -22,8 +22,8 @@ foreach ($get_query as &$get_query_each){
 	
 		if ($key === '$oid'){
 			echo $value . ": ";
-			$t_id = $value;
-			
+			$_id = $value;
+			$url_id = 'https://api.mlab.com/api/1/databases/linedb/collections/mynewcollection/'.$_id.'?apiKey='.$api_key;
 			$newupdate = json_encode(
 			array(
 				'$set' => array('answer'=> 'ฉันไง')
@@ -38,7 +38,7 @@ foreach ($get_query as &$get_query_each){
 					'content' => $newupdate
 				)
 			);
-			$url_id = 'https://api.mlab.com/api/1/databases/linedb/collections/mynewcollection/'.$t_id.'?apiKey='.$api_key;
+
 			$contextu = stream_context_create($optsu);
 			//echo $contextu;
 			$returnValup = file_get_contents($url_id, false, $contextu);
@@ -50,6 +50,7 @@ foreach ($get_query as &$get_query_each){
 			
 			
 		}
+		
 		
 	}
 
