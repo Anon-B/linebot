@@ -23,7 +23,7 @@ foreach ($get_query as &$get_query_each){
 		if ($key === '$oid'){
 			echo $value . ": ";
 			$_id = $value;
-			$url_id = 'https://api.mlab.com/api/1/databases/linedb/collections/mynewcollection/'.$_id.'?apiKey='.$api_key;
+			$url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$_id.'?apiKey='.$api_key;
 			$newupdate = json_encode(
 			array(
 				'$set' => array('answer'=> 'ฉันไง')
