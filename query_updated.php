@@ -9,7 +9,7 @@ $get_query = json_decode($json_query);
 echo 'result --' .$json_query;
 echo "                                 ";
 echo '<br>';
-echo 'decode_get --' .$get_query;
+echo 'decode_get --' .$get_query[0]:['_id'];
 echo "                                 ";
 echo '<br>';
 
