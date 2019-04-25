@@ -9,12 +9,9 @@ $get_query = json_decode($json_query);
 echo 'result --' .$json_query;
 echo "                                 ";
 echo '<br>';
-echo 'decode_get --' .$get_query[0][0];
+echo 'decode_get --'.$get_query[0]['_id'];
 echo "                                 ";
 echo '<br>';
-
-
-
 $newupdate = json_encode(
 	array(
 		'$set' => array('answer'=> 'นนท์เองครับ')
