@@ -22,8 +22,8 @@ foreach ($get_query as &$get_query_each){
 	
 		if ($key === '$oid'){
 			echo $value . ": ";
-			/* $_id = $value;
-			$url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$_id.'?apiKey='.$api_key;
+			$_id = $value;
+			/* $url_id = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint/'.$_id.'?apiKey='.$api_key;
 			$newupdate = json_encode(
 			array(
 				'$set' => array('answer'=> 'ฉันไง')
@@ -37,7 +37,7 @@ foreach ($get_query as &$get_query_each){
 					'header' => "Content-type: application/json",
 					'content' => $newupdate
 				)
-			); */
+			);
 
 			$contextu = stream_context_create($optsu);
 			//echo $contextu;
@@ -45,7 +45,7 @@ foreach ($get_query as &$get_query_each){
 			echo 'Updated: '.$returnValup; 
 			///$returnValup ถ้าอัพเดทสำเร็จ Updated: { "n" : 1}
 			echo '<hr>';
-			echo '<br>'; 
+			echo '<br>';  */
 			
 			
 			
