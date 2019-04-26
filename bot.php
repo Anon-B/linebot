@@ -486,7 +486,7 @@ function replyMsg($event, $client){
 			
 		}
 		
-    }
+    
 
     elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
         $client->replyMessage1($event['replyToken'],array(
