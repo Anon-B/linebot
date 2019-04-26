@@ -659,8 +659,7 @@ function replyMsg($event, $client){
 										'method' => "PUT",
 										'header' => "Content-type: application/json",
 										'content' => $newupdate
-									)
-								);
+									));
 
 								$contextu = stream_context_create($optsu);
 								//echo $contextu;
