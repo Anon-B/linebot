@@ -497,6 +497,7 @@ function replyMsg($event, $client){
 				) )
 			);
     }
+}
 
  /*   elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
@@ -545,7 +546,7 @@ function replyMsg($event, $client){
     }
 } */
 	
-
+/* 
 	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
 		$latitude = $event['message']['latitude'];
@@ -669,7 +670,7 @@ function replyMsg($event, $client){
 
 		}					
 
-	}  
+	}   */
 	
 }
 
@@ -704,7 +705,7 @@ foreach ($client->parseEvents() as $event) {
             error_log("Unsupporeted event type: " . $event['type']);
             break;
     }
-};
+}
 //ชุดตัวอย่างการเขียนแบบของเตย-------------------//
 
 echo "PASS";
