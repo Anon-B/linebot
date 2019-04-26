@@ -7,7 +7,7 @@ ini_set("error_log", "php-error.txt");
 
 // for test debug file
 require_once('LINEBotTiny.php');
-date_default_timezone_set("Asia/Bangkok");
+
 
 $access_token = 'Z+82Dj/iMhmE3mjr2EKu+0+W5a4O0ZiLT8SiohLjwTwSINQ+Kd/v+FdHPH9vSHriwk3IkO7Kio8GWTum007bD3r8/1BCtayNWvf+cDL8FznI3YyKcJ0OazxuBuzrlvXkpn8mYfi5MwddhMfPi3JvvgdB04t89/1O/w1cDnyilFU=';
 
@@ -554,9 +554,6 @@ function replyMsg($event, $client){
 		$address = $event['message']['address'];
 		$uid = $event['source']['userId'];
 		$gid = $event['source']['groupId'];
-		$timestamp = $event['timestamp'];
-		//$time = date('Y-m-d h:i:s');
-		
 
 			
 
@@ -598,14 +595,7 @@ function replyMsg($event, $client){
 										'id' => $uid,
 										'address' => $address,
 										'latitude' => $latitude,
-										'longitude'=> $longitude,
-										'record_time' =>'',
-										'status' => '',
-										'response_time' =>'',
-										'recorder' =>''
-					
-										
-									
+										'longitude'=> $longitude
 								));
 
 								$opts = array(
@@ -639,11 +629,7 @@ function replyMsg($event, $client){
 										'$set' => array(
 										'address' => $address,
 										'latitude' => $latitude,
-										'longitude'=> $longitude,
-										'record_time' =>'',
-										'status' => '',
-										'response_time' =>'',
-										'recorder' =>''
+										'longitude'=> $longitude)
 										)
 									);
 
