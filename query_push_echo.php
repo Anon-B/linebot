@@ -9,15 +9,14 @@ $data = array();
 foreach ($get_quest as &$get_quest_each){
 	array_push($data, array(
 			'id' => $result['id'],
-			'address' => $result['question'],	
-			'latitude' => $result['answer'],	
-			'longitude' => $result['line_id'],	
-			'record_time' => $result['status'],	
-			'status' => $result['admin_by'],	
-			'response_time' => $result['datetime_ques'],	
-			'recorder' => $result['datetime_ans']
-						)
-						);
+			'address' =>  $get_quest_each->address,	
+			'latitude' => $get_quest_each->latitude,	
+			'longitude' => $get_quest_each->longitude,	
+			'record_time' => $get_quest_each->record_time,	
+			'status' => $get_quest_each->status,	
+			'response_time' => $get_quest_each->response_time,	
+			'recorder' => $get_quest_each->recorder
+			));
 
 
 	
