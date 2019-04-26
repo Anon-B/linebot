@@ -636,7 +636,6 @@ function replyMsg($event, $client){
 
 								
 								$newupdate = json_encode(
-									array(
 										'$set' => array(
 										'address' => $address,
 										'latitude' => $latitude,
@@ -645,8 +644,7 @@ function replyMsg($event, $client){
 										'status'=> '',
 										'response_time'=> '',
 										'recorder'=> ''
-										)
-									);
+										));
 
 									
 									//$newupdate = json_encode(array(
@@ -669,7 +667,7 @@ function replyMsg($event, $client){
 																				
 						
 
-		}					
+							
 
 	}  
 	
