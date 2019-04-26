@@ -662,7 +662,7 @@ function replyMsg($event, $client){
  */
 
 
-
+}
 
 // listen  $client->parseEvents()  ควรเอาไว้ล่างสุด ถ้าเอาไว้ด้านบนจะทำให้ pushMsg ไม่ได้
 foreach ($client->parseEvents() as $event) {
