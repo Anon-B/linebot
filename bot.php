@@ -673,7 +673,7 @@ function replyMsg($event, $client){
 		}					
 
 	} 
-}
+};
 
 
 
