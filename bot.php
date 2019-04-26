@@ -546,60 +546,60 @@ function replyMsg($event, $client){
 } */
 	
 
-	// elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
+	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
-		// $latitude = $event['message']['latitude'];
-		// $longitude = $event['message']['longitude'];
-		// $title = $event['message']['title'];
-		// $address = $event['message']['address'];
-		// $uid = $event['source']['userId'];
-		// $gid = $event['source']['groupId'];
+		$latitude = $event['message']['latitude'];
+		$longitude = $event['message']['longitude'];
+		$title = $event['message']['title'];
+		$address = $event['message']['address'];
+		$uid = $event['source']['userId'];
+		$gid = $event['source']['groupId'];
 
 			
 
-					// if ($gid){
-						// $t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-						// $client->pushMessage1($gid,array(
-									// array(
-										// 'type' => 'text',
-										// 'text' => $t 
-									// ) 
-								// )
-						// );
-					// }
+					if ($gid){
+						$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
+						$client->pushMessage1($gid,array(
+									array(
+										'type' => 'text',
+										'text' => $t 
+									) 
+								)
+						);
+					}
 
-					// else if ($uid){
-						// $t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-						// $client->pushMessage1($uid,array(
-									// array(
-										// 'type' => 'text',
-										// 'text' => $t 
-									// ) 
-								// )
-						// );
+					else if ($uid){
+						$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
+						$client->pushMessage1($uid,array(
+									array(
+										'type' => 'text',
+										'text' => $t 
+									) 
+								)
+						);
 						
 						
 						
-						// $url_get = ('https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?q={"id":'.$uid.'}&apiKey='.$api_key'&c=true'
-						// $json_get = file_get_contents($url_get);
+						$url_get = ('https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?q={"id":'.$uid.'}&apiKey='.$api_key'&c=true'
+						$json_get = file_get_contents($url_get);
 						
 						
-						เพิ่มข้อมูลพิกัดในไลน์
-							// if $json_get = 0 {
-								// $api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
-								// $url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+						//เพิ่มข้อมูลพิกัดในไลน์
+							if $json_get = 0 {
+								$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
+								$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
 
 
-								// $new = json_encode(
-									// array(
-										// 'id' => $uid,
-										// 'address' => $address,
-										// 'latitude' => $latitude,
-										// 'longitude'=> $longitude,
-										// 'record_time'=> '',
-										// 'status'=> '',
-										// 'response_time'=> '',
-										// 'recorder'=> ''
+								$new = json_encode(
+									array(
+										'id' => $uid,
+										'address' => $address,
+										'latitude' => $latitude,
+										'longitude'=> $longitude,
+										'record_time'=> '',
+										'status'=> '',
+										'response_time'=> '',
+										'recorder'=> ''
 										
 										
 										
@@ -607,71 +607,71 @@ function replyMsg($event, $client){
 										
 										
 									
-								// ));
+								));
 
-								// $opts = array(
-									// 'http' => array(
-										// 'method' => "POST",
-										// 'header' => "Content-type: application/json",
-										// 'content' => $new
-									// ));
-
-								// $context = stream_context_create($opts);
-								// $returnVal = file_get_contents($url, false, $context);
-								// echo 'Added: '.$returnVal;
-								// echo '<hr>';
-								// echo '<br>';
-							
-							
-							
-							
-							// };
-							
-						เเก้ไขข้อมูลพิดในไลน์
-							// else if $json_get = 1{
-								
-								// $api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
-								// $url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
-
-
-								
-								// $newupdate = json_encode(
-										// '$set' => array(
-										// 'address' => $address,
-										// 'latitude' => $latitude,
-										// 'longitude'=> $longitude,
-										// 'record_time'=> '',
-										// 'status'=> '',
-										// 'response_time'=> '',
-										// 'recorder'=> ''
-										// ));
-
-									
-									$newupdate = json_encode(array(
-											'answer' => 'ขอคิดดูก่อน'
+								$opts = array(
+									'http' => array(
+										'method' => "POST",
+										'header' => "Content-type: application/json",
+										'content' => $new
 									));
+
+								$context = stream_context_create($opts);
+								$returnVal = file_get_contents($url, false, $context);
+								echo 'Added: '.$returnVal;
+								echo '<hr>';
+								echo '<br>';
+							
+							
+							
+							
+							};
+							
+						//เเก้ไขข้อมูลพิดในไลน์
+							else if $json_get = 1{
+								
+								$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
+								$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+
+
+								
+								$newupdate = json_encode(
+										'$set' => array(
+										'address' => $address,
+										'latitude' => $latitude,
+										'longitude'=> $longitude,
+										'record_time'=> '',
+										'status'=> '',
+										'response_time'=> '',
+										'recorder'=> ''
+										));
+
+									
+									//$newupdate = json_encode(array(
+									//		'answer' => 'ขอคิดดูก่อน'
+									//));
 									
 
-								// $optsu = array(
-									// 'http' => array(
-										// 'method' => "PUT",
-										// 'header' => "Content-type: application/json",
-										// 'content' => $newupdate
-									// ));
+								$optsu = array(
+									'http' => array(
+										'method' => "PUT",
+										'header' => "Content-type: application/json",
+										'content' => $newupdate
+									));
 
-								// $contextu = stream_context_create($optsu);
-								echo $contextu;
-								// $returnValup = file_get_contents($url, false, $contextu);
+								$contextu = stream_context_create($optsu);
+								//echo $contextu;
+								$returnValup = file_get_contents($url, false, $contextu);
 								
-							// };
+							};
 																				
 						
 
-		// }					
+		}					
 
-	// }  
+	}  
 	
-};
+}
 
 
 
@@ -704,7 +704,7 @@ foreach ($client->parseEvents() as $event) {
             error_log("Unsupporeted event type: " . $event['type']);
             break;
     }
-};
+}
 //ชุดตัวอย่างการเขียนแบบของเตย-------------------//
 
 echo "PASS";
