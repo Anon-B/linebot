@@ -499,54 +499,8 @@ function replyMsg($event, $client){
     }
 }
 
- /*   elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
-
-		$latitude = $event['message']['latitude'];
-		$longitude = $event['message']['longitude'];
-		$title = $event['message']['title'];
-		$address = $event['message']['address'];
-		$uid = $event['source']['userId'];
-		$gid = $event['source']['groupId'];
-
-
-				if ($gid){
-					$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-					$client->pushMessage1($gid,array(
-								array(
-									'type' => 'text',
-									'text' => $t 
-								) 
-							)
-					);
-				}
-
-				else if ($uid){
-					$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-					$client->pushMessage1($uid,array(
-								array(
-									'type' => 'text',
-									'text' => $t 
-								) 
-							)
-					);
-				}
-
-
-				   $client->replyMessage1($event['replyToken'],array(
-							array(
-									"type"=> "location",
-									"title"=> "ตำแหน่งของท่าน",
-									"address"=> $address,
-									"latitude"=> $latitude,
-									"longitude"=> $longitude
-							)
-					   )
-					);
-
-    }
-} */
 	
-/* 
+ 
 	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
 		$latitude = $event['message']['latitude'];
@@ -626,7 +580,7 @@ function replyMsg($event, $client){
 							
 							
 							
-							};
+							}
 							
 						//เเก้ไขข้อมูลพิดในไลน์
 							else if $json_get = 1{
@@ -664,13 +618,13 @@ function replyMsg($event, $client){
 								//echo $contextu;
 								$returnValup = file_get_contents($url, false, $contextu);
 								
-							};
+							}
 																				
 						
 
 		}					
 
-	}   */
+	}   
 	
 }
 
