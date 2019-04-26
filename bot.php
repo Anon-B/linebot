@@ -500,7 +500,7 @@ function replyMsg($event, $client){
     }
 
 
-/* 	
+ 	
  
 	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
@@ -621,7 +621,7 @@ function replyMsg($event, $client){
 		}					
 
 	}   
-	 */
+	 
 }
 
 
