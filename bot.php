@@ -7,7 +7,7 @@ ini_set("error_log", "php-error.txt");
 
 // for test debug file
 require_once('LINEBotTiny.php');
-
+date_default_timezone_set("Asia/Bangkok");
 
 $access_token = 'Z+82Dj/iMhmE3mjr2EKu+0+W5a4O0ZiLT8SiohLjwTwSINQ+Kd/v+FdHPH9vSHriwk3IkO7Kio8GWTum007bD3r8/1BCtayNWvf+cDL8FznI3YyKcJ0OazxuBuzrlvXkpn8mYfi5MwddhMfPi3JvvgdB04t89/1O/w1cDnyilFU=';
 
@@ -554,69 +554,120 @@ function replyMsg($event, $client){
 		$address = $event['message']['address'];
 		$uid = $event['source']['userId'];
 		$gid = $event['source']['groupId'];
-
+		$timestamp = $event['timestamp'];
+		$time = date('Y-m-d h:i:s');
 		
 
-				if ($gid){
-					$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-					$client->pushMessage1($gid,array(
-								array(
-									'type' => 'text',
-									'text' => $t 
-								) 
-							)
-					);
-				}
+			
 
-				else if ($uid){
-					$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
-					$client->pushMessage1($uid,array(
-								array(
-									'type' => 'text',
-									'text' => $t 
-								) 
-							)
-					);
+					if ($gid){
+						$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
+						$client->pushMessage1($gid,array(
+									array(
+										'type' => 'text',
+										'text' => $t 
+									) 
+								)
+						);
+					}
+
+					else if ($uid){
+						$t = 'กำลังตรวจสอบตำแหน่งของท่าน โปรดรอสักครู่ ...';	
+						$client->pushMessage1($uid,array(
+									array(
+										'type' => 'text',
+										'text' => $t 
+									) 
+								)
+						);
+						
+						
+						
+						$url_get = ('https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?q={"id":'.$uid.'}&apiKey='.$api_key'&c=true'
+						$json_get = file_get_contents($url_get);
+						
+						
+						//เพิ่มข้อมูลพิกัดในไลน์
+							if $json_get = 0 {
+								$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
+								$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+
+
+								$new = json_encode(
+									array(
+										'id' => $uid,
+										'address' => $address,
+										'latitude' => $latitude,
+										'longitude'=> $longitude,
+										'record_time' =>'',
+										'status' => '',
+										'response_time' =>$time,
+										'recorder' =>''
 					
-					
-					
-					
-					
-					
-					$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
-					$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
+										
+									
+								));
+
+								$opts = array(
+									'http' => array(
+										'method' => "POST",
+										'header' => "Content-type: application/json",
+										'content' => $new
+									));
+
+								$context = stream_context_create($opts);
+								$returnVal = file_get_contents($url, false, $context);
+								echo 'Added: '.$returnVal;
+								echo '<hr>';
+								echo '<br>';
+							
+							
+							
+							
+							};
+							
+						//เเก้ไขข้อมูลพิดในไลน์
+							else if $json_get = 1{
+								
+								$api_key="qNge0HYBBuKUvMe59qTLBylOfo5osudi";
+								$url = 'https://api.mlab.com/api/1/databases/mlab_nosql/collections/leakpoint?apiKey='.$api_key;
 
 
+								
+								$newupdate = json_encode(
+									array(
+										'$set' => array(
+										'address' => $address,
+										'latitude' => $latitude,
+										'longitude'=> $longitude)
+										)
+									);
 
+									
+									//$newupdate = json_encode(array(
+									//		'answer' => 'ขอคิดดูก่อน'
+									//));
+									
 
+								$optsu = array(
+									'http' => array(
+										'method' => "PUT",
+										'header' => "Content-type: application/json",
+										'content' => $newupdate
+									)
+								);
 
+								$contextu = stream_context_create($optsu);
+								//echo $contextu;
+								$returnValup = file_get_contents($url, false, $contextu);
+								
+							};
+																				
+						
 
-					$new = json_encode(
-						array(
-							'id' => $uid,
-							'address' => $address,
-							'latitude' => $latitude,
-							'longitude'=> $longitude
-					));
+					}					
 
-					$opts = array(
-						'http' => array(
-							'method' => "POST",
-							'header' => "Content-type: application/json",
-							'content' => $new
-						));
-
-					$context = stream_context_create($opts);
-					$returnVal = file_get_contents($url, false, $context);
-					echo 'Added: '.$returnVal;
-					echo '<hr>';
-					echo '<br>';
-
-				}
-		
-	
-
-		} 
+			} 
 	}
 
 
