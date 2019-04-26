@@ -639,7 +639,11 @@ function replyMsg($event, $client){
 										'$set' => array(
 										'address' => $address,
 										'latitude' => $latitude,
-										'longitude'=> $longitude)
+										'longitude'=> $longitude,
+										'record_time' =>'',
+										'status' => '',
+										'response_time' =>'',
+										'recorder' =>''
 										)
 									);
 
