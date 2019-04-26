@@ -8,7 +8,7 @@ $get_quest = json_decode($json_get);
 $data = array();	
 foreach ($get_quest as &$get_quest_each){
 	array_push($data, array(
-			'id' => $result['id'],
+			'id' => $get_quest_each->id,
 			'address' =>  $get_quest_each->address,	
 			'latitude' => $get_quest_each->latitude,	
 			'longitude' => $get_quest_each->longitude,	
