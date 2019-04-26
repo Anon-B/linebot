@@ -704,7 +704,7 @@ foreach ($client->parseEvents() as $event) {
             error_log("Unsupporeted event type: " . $event['type']);
             break;
     }
-}
+};
 //ชุดตัวอย่างการเขียนแบบของเตย-------------------//
 
 echo "PASS";
