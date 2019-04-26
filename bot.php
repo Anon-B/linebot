@@ -497,7 +497,7 @@ function replyMsg($event, $client){
 				) )
 			);
     }
-}
+
 
 	
  
@@ -555,12 +555,7 @@ function replyMsg($event, $client){
 										'status'=> '',
 										'response_time'=> '',
 										'recorder'=> ''
-										
-										
-										
 				
-										
-										
 									
 								));
 
