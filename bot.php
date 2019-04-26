@@ -546,7 +546,7 @@ function replyMsg($event, $client){
 } */
 	
 
-	/* elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
+	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
 		$latitude = $event['message']['latitude'];
 		$longitude = $event['message']['longitude'];
@@ -595,7 +595,18 @@ function replyMsg($event, $client){
 										'id' => $uid,
 										'address' => $address,
 										'latitude' => $latitude,
-										'longitude'=> $longitude
+										'longitude'=> $longitude,
+										'record_time'=> '',
+										'status'=> '',
+										'response_time'=> '',
+										'recorder'=> ''
+										
+										
+										
+				
+										
+										
+									
 								));
 
 								$opts = array(
@@ -629,7 +640,11 @@ function replyMsg($event, $client){
 										'$set' => array(
 										'address' => $address,
 										'latitude' => $latitude,
-										'longitude'=> $longitude)
+										'longitude'=> $longitude),
+										'record_time'=> '',
+										'status'=> '',
+										'response_time'=> '',
+										'recorder'=> ''
 										)
 									);
 
@@ -659,7 +674,7 @@ function replyMsg($event, $client){
 
 			} 
 	}
- */
+
 
 
 }
