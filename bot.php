@@ -555,7 +555,7 @@ function replyMsg($event, $client){
 		$uid = $event['source']['userId'];
 		$gid = $event['source']['groupId'];
 		$timestamp = $event['timestamp'];
-		$time = date('Y-m-d h:i:s');
+		//$time = date('Y-m-d h:i:s');
 		
 
 			
@@ -601,7 +601,7 @@ function replyMsg($event, $client){
 										'longitude'=> $longitude,
 										'record_time' =>'',
 										'status' => '',
-										'response_time' =>$time,
+										'response_time' =>$timestamp,
 										'recorder' =>''
 					
 										
