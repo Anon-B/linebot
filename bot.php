@@ -501,7 +501,7 @@ function replyMsg($event, $client){
 
 
  	
- 
+ /* 
  	elseif ($event['type'] == 'message' && $event['message']['type'] == 'location') {
 
 		$latitude = $event['message']['latitude'];
@@ -620,7 +620,7 @@ function replyMsg($event, $client){
 
 		}					
 
-	}    
+	}     */
 	 
 }
 
